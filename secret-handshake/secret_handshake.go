@@ -29,9 +29,11 @@ func Handshake(i int) []string {
 }
 
 // reverse returns a reversed slice
-func reverse(s []string) []string {
-	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
-		s[i], s[j] = s[j], s[i]
+func reverse(items []string) []string {
+	l := len(items)
+	reversed := make([]string, l)
+	for i, v := range items {
+		reversed[l-i-1] = v
 	}
-	return s
+	return reversed
 }
