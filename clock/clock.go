@@ -11,7 +11,7 @@ type Clock struct {
 	minute int
 }
 
-// New instanciates a new clock
+// New instantiates a new clock
 func New(hour int, minute int) Clock {
 	newMinute := minute % 60
 	if newMinute < 0 {
@@ -26,7 +26,7 @@ func New(hour int, minute int) Clock {
 }
 
 // String returns a string representation of the clock
-func (c Clock) String() string {
+func (c *Clock) String() string {
 	return fmt.Sprintf("%02d:%02d", c.hour, c.minute)
 }
 
