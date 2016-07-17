@@ -8,7 +8,7 @@ import (
 
 const testVersion = 2
 
-// Encodes encodes a string using the square code encryption algorithm
+// Encode encodes a string using the square code encryption algorithm
 func Encode(s string) string {
 	s = normalize(s)
 	length := len(s)
