@@ -2,15 +2,16 @@
 package robotname
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
-	"fmt"
 )
 
 type Robot string
 
 var registry = make(map[*Robot]bool)
 
+// Name returns an unique robot name
 func (r *Robot) Name() string {
 	if registry[r] {
 		return string(*r)
@@ -22,7 +23,7 @@ func (r *Robot) Name() string {
 }
 
 func randomLetter() string {
-	r := rand.Intn('Z' - 'A') + 'A'
+	r := rand.Intn('Z'-'A') + 'A'
 	return string(r)
 }
 
@@ -30,6 +31,7 @@ func randomNumber() string {
 	return fmt.Sprintf("%03d", rand.Intn(1000))
 }
 
+// Reset reset a robot's name
 func (r *Robot) Reset() {
 	registry[r] = false
 }
