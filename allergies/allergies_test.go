@@ -53,6 +53,11 @@ var allergicToTests = []struct {
 	{false, 0, "strawberries"},
 	{true, 1, "eggs"},
 	{true, 5, "eggs"},
+	{true, 4, "shellfish"},
+	{true, 128, "cats"},
+	{true, 129, "eggs"},
+	{true, 84, "shellfish"},
+	{true, 84, "tomatoes"},
 }
 
 func TestAllergicTo(t *testing.T) {
