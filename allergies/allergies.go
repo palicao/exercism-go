@@ -16,7 +16,8 @@ var allergens = []string{
 func Allergies(score int) []string {
 	list := make([]string, 0)
 	for i, a := range allergens {
-		if score&(1<<uint(i)) > 0 {
+		flag := 1<<uint(i)
+		if score&flag == flag {
 			list = append(list, a)
 		}
 	}
@@ -26,7 +27,10 @@ func Allergies(score int) []string {
 // AllergicTo returns true if the person is allergic to a specific allergen
 func AllergicTo(score int, allergen string) bool {
 	for i, a := range allergens {
-		return a == allergen && score&(1<<uint(i)) > 0
+		if a == allergen {
+			flag := 1<<uint(i)
+			return score&flag == flag
+		}
 	}
 	return false
 }
