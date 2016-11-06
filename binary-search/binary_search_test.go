@@ -20,7 +20,7 @@
 package binarysearch
 
 import (
-	_ "math/rand"
+	"math/rand"
 	"sort"
 	"testing"
 )
@@ -118,7 +118,6 @@ func TestSearchInts(t *testing.T) {
 // all of these different tests in a real program.  The point of the exercise
 // is just to show that it is possible to identify a number of different
 // conditions from the return value.
-/*
 func TestMessage(t *testing.T) {
 	for _, test := range testData {
 		if !sort.IntsAreSorted(test.slice) {
@@ -129,10 +128,9 @@ func TestMessage(t *testing.T) {
 				test.slice, test.key, res, test.ref)
 		}
 	}
-}*/
+}
 
 // Benchmarks also test searching larger random slices
-/*
 func Benchmark1e2(b *testing.B) {
 	s := make([]int, 1e2)
 	for i := range s {
@@ -192,4 +190,3 @@ func Benchmark1e6(b *testing.B) {
 		SearchInts(s, k)
 	}
 }
-*/
